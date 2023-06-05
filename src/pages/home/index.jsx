@@ -1,11 +1,14 @@
+import Layout from '../../components/layout'
+import Card from '../../components/card'
 import { useState } from 'react'
 
 function Home() {
 
   return (
-    <div className='bg-red-100'>
+    <Layout>
       Home
-    </div>
+      <Card/>
+    </Layout>
   )
 }
 

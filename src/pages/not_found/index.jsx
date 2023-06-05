@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import Layout from '../../components/layout'
 
 function NotFound() {
 
   return (
-    <div className='bg-red-100'>
+    <Layout>
       NotFound
-    </div>
+    </Layout>
   )
 }
 
