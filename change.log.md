@@ -1,5 +1,9 @@
 ### Change log del Ecommerce
+### 0.0.3 (joaodemata)
 
+## Added
+
+- Contextos, Iconos con heroIcons y componente de productDetail
 
 ### 0.0.2 (joaodemata)
 
