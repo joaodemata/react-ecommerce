@@ -1,4 +1,10 @@
 ### Change log del Ecommerce
+### 0.0.4 (joaodemata)
+
+## Added
+
+- Detalle de card
+
 ### 0.0.3 (joaodemata)
 
 ## Added
