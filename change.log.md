@@ -1,4 +1,10 @@
 ### Change log del Ecommerce
+
+### 0.0.5 (joaodemata)
+
+## Added
+
+- Vistas de my orders, mejoras en my order y nuevos enrutadores 
 ### 0.0.4 (joaodemata)
 
 ## Added

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import './style.css';
+import './styles.css';
 import { ShoppingCardContext } from '../../context';
 
 const ProductDetail = () =>{
@@ -15,7 +15,7 @@ const ProductDetail = () =>{
                 </div>
             </div>
             <figure className='px-6'>
-                <img className='w-full h-full' src={context.productToShow.images[0]} alt={context.productToShow.title} />
+                <img className='w-full h-full' src={context.productToShow.images} alt={context.productToShow.title} />
             </figure>
             <p className='flex flex-col p-6'>
                 <span className='font-medium text-2xl mb-2'>${context.productToShow.price}</span>

@@ -1,5 +1,6 @@
 import {useRoutes, BrowserRouter} from 'react-router-dom'
 import { ShoppingCardProvider } from '../../context'
+import CheckoutSideMenu from '../../components/checkout_side_menu'
 
 import Home from '../home'
 import MyAccount from '../my_account'
@@ -29,6 +30,14 @@ const AppRoutes = () =>{
       element: <MyOrders/>
     }, 
     {
+      path: '/my-orders/last',
+      element: <MyOrder/>
+    }, 
+    {
+      path: '/my-orders/:id',
+      element: <MyOrder/>
+    }, 
+    {
       path: '/sign-in',
       element: <SignIn/>
     }, 
@@ -48,6 +57,7 @@ const App = () => {
       <BrowserRouter>
         <AppRoutes/>
         <NavBar/>
+        <CheckoutSideMenu/>
       </BrowserRouter>
     </ShoppingCardProvider>
   )
