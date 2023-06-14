@@ -1,16 +1,16 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeftIcon } from '@heroicons/react/24/solid'
+import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { ShoppingCardContext } from '../../context';
-import Layout from '../../components/layout'
+import Layout from '../../components/layout';
 import OrderCard from '../../components/order_card';
 
 function MyOrder() {
   const context = useContext(ShoppingCardContext);
   const currentPath = window.location.pathname;
-  let index = currentPath.substring(currentPath.lastIndexOf('/') + 1)
+  let index = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
-  if(index === 'last') index = context.order?.length - 1 
+  if(index === 'last') index = context.order?.length - 1; 
 
   return (
     <Layout>
@@ -21,15 +21,15 @@ function MyOrder() {
         <h1>MyOrder</h1>
 
       </div>
-          <div className='flex flex-col w-80'>
-                {
-                    context.order?.[index].products.map(_product => {
-                        return <OrderCard key={_product.id} id={_product.id} title={_product.title} imageUrl={_product.images} price={_product.price}/>
-                    })
-                }
-            </div>
+      <div className='flex flex-col w-80'>
+        {
+          context.order?.[index].products.map(_product => {
+            return <OrderCard key={_product.id} id={_product.id} title={_product.title} imageUrl={_product.images} price={_product.price}/>;
+          })
+        }
+      </div>
     </Layout>
-  )
+  );
 }
 
-export default MyOrder
+export default MyOrder;

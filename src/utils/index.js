@@ -4,11 +4,11 @@
  * @returns {Number} Total price
  */
 export const totalPrice = (_products) => {
-    let sum = 0
+  let sum = 0;
 
-    _products.forEach(_product =>{
-        sum += parseFloat(_product.price)
-    })
+  _products.forEach((_product) => {
+    sum += parseFloat(_product.price);
+  });
 
-    return sum;
-}
+  return sum;
+};

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from '../../components/layout'
-import OrdersCard from '../../components/orders_card'
+import Layout from '../../components/layout';
+import OrdersCard from '../../components/orders_card';
 import { ShoppingCardContext } from '../../context';
 
 function MyOrders() {
@@ -17,11 +17,11 @@ function MyOrders() {
         context.order.map((_order, _index)=> {
           return (<Link key={_index}  to={`/my-orders/${_index}`} > 
             <OrdersCard totalPrice={_order.totalPrice} totalProducts={_order.totalProducts}/>
-          </Link>)
+          </Link>);
         })
       }
     </Layout>
-  )
+  );
 }
 
-export default MyOrders
+export default MyOrders;

@@ -1,4 +1,4 @@
-import Layout from '../../components/layout'
+import Layout from '../../components/layout';
 
 function MyAccount() {
 
@@ -6,7 +6,7 @@ function MyAccount() {
     <Layout>
       MyAccount
     </Layout>
-  )
+  );
 }
 
-export default MyAccount
+export default MyAccount;
