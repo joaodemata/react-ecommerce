@@ -1,10 +1,18 @@
 ### Change log del Ecommerce
 
+### 0.0.6 (joaodemata)
+
+## Added
+
+- Corregir identaciones, semicomas y comillas
+- Nuevos logos cuando esta cargando y correcion de bugs
+
 ### 0.0.5 (joaodemata)
 
 ## Added
 
-- Vistas de my orders, mejoras en my order y nuevos enrutadores 
+- Vistas de my orders, mejoras en my order y nuevos enrutadores
+
 ### 0.0.4 (joaodemata)
 
 ## Added
@@ -27,7 +35,7 @@
 
 ## Added
 
-- Estructura 
-- paginas 
+- Estructura
+- paginas
 - enrutado a paginas
 - Componente Nav bar y sus estilos

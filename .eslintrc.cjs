@@ -1,15 +1,32 @@
 module.exports = {
   env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended', 'eslint-config-prettier'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
+    'require-jsdoc': 0,
+    'no-invalid-this': 0,
+    'new-cap': [1, { newIsCap: false, capIsNew: false }],
+    'no-console': 1,
+    'max-len': [1, 300],
+    indent: [2, 2, { SwitchCase: 1, ignoreComments: true, offsetTernaryExpressions: false, ignoredNodes: ['ConditionalExpression', 'TemplateLiteral > *'] }],
+    'linebreak-style': [2, 'windows'],
+    'operator-linebreak': ['off', 'none'],
+    quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+    semi: [2, 'always'],
+    'no-var': 2,
+    'no-extra-semi': 2,
+    'object-curly-spacing': [2, 'always', { arraysInObjects: true, objectsInObjects: true }],
+    'array-bracket-spacing': [0, 'never', { singleValue: false, objectsInArrays: false, arraysInArrays: false }],
+    'prefer-const': [
+      2,
+      {
+        destructuring: 'any',
+        ignoreReadBeforeAssign: false,
+      },
+    ],
     'react-refresh/only-export-components': 'warn',
+    'react/prop-types': 0,
   },
-}
+};

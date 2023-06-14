@@ -1,20 +1,40 @@
-import {useRoutes, BrowserRouter} from 'react-router-dom'
-import { ShoppingCardProvider } from '../../context'
-import CheckoutSideMenu from '../../components/checkout_side_menu'
+import { useRoutes, BrowserRouter } from 'react-router-dom';
+import { ShoppingCardProvider } from '../../context';
+import CheckoutSideMenu from '../../components/checkout_side_menu';
 
-import Home from '../home'
-import MyAccount from '../my_account'
-import MyOrder from '../my_order'
-import MyOrders from '../my_orders'
-import NotFound from '../not_found'
-import SignIn from '../sign_in'
-import NavBar from '../../components/nav_bar'
-import './App.css'
+import Home from '../home';
+import MyAccount from '../my_account';
+import MyOrder from '../my_order';
+import MyOrders from '../my_orders';
+import NotFound from '../not_found';
+import SignIn from '../sign_in';
+import NavBar from '../../components/nav_bar';
+import './App.css';
  
 const AppRoutes = () =>{
-  let routes = useRoutes([
+  const routes = useRoutes([
     {
       path: '/',
+      element: <Home/>
+    }, 
+    {
+      path: '/clothes',
+      element: <Home/>
+    }, 
+    {
+      path: '/electronics',
+      element: <Home/>
+    }, 
+    {
+      path: '/furnitures',
+      element: <Home/>
+    }, 
+    {
+      path: '/toys',
+      element: <Home/>
+    }, 
+    {
+      path: '/others',
       element: <Home/>
     }, 
     {
@@ -45,10 +65,10 @@ const AppRoutes = () =>{
       path: '/*',
       element: <NotFound/>
     }, 
-  ])
+  ]);
 
-  return routes
-}
+  return routes;
+};
 
 const App = () => {
  
@@ -60,7 +80,7 @@ const App = () => {
         <CheckoutSideMenu/>
       </BrowserRouter>
     </ShoppingCardProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;
