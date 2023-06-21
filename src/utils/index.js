@@ -12,3 +12,22 @@ export const totalPrice = (_products) => {
 
   return sum;
 };
+
+/**
+ *
+ * @version        :1.0.0
+ * @description    :Extract a value from localstorage an parse it
+ * @param {String} key - key of item
+ * @returns any
+ *
+ */
+
+export const extractAndParseLocalStorage = (_key) => {
+  const ITEM = localStorage.getItem(_key);
+
+  if (ITEM) {
+    return JSON.parse(ITEM);
+  } else {
+    return null;
+  }
+};
