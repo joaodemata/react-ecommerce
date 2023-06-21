@@ -1,5 +1,13 @@
 ### Change log del Ecommerce
 
+### 0.0.7 (joaodemata)
+
+## Added
+
+- Usar local storage para saber si se esta logueado o no
+- Vista de registrarse y login
+- Cambiar navbar cuando tiene una sesion activa o no
+
 ### 0.0.6 (joaodemata)
 
 ## Added

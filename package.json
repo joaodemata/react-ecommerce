@@ -1,13 +1,12 @@
 {
   "name": "ecommerce",
   "private": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint src --fix --ext js,jsx",
-    "preview": "vite preview"
+    "lint": "eslint src --fix --ext js,jsx"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",

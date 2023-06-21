@@ -1,10 +1,39 @@
 import { createContext, useState, useEffect } from 'react';
+import { extractAndParseLocalStorage } from '../utils';
 
 export const ShoppingCardContext = createContext();
 
+export const initializeLocalStorage = () =>{
+  const accountInLocalStorage = extractAndParseLocalStorage('account');
+  const signOutInLocalStorage = extractAndParseLocalStorage('sign-out');
+
+  let parsedAccount;
+  let parsedSignOut;
+
+  if(!accountInLocalStorage){
+    localStorage.setItem('account', JSON.stringify({}));
+    parsedAccount = {};
+  }else {
+    parsedAccount = accountInLocalStorage;
+  }
+
+  if(!signOutInLocalStorage){
+    localStorage.setItem('sign-out', JSON.stringify(false));
+    parsedSignOut = false;
+  }else{
+    parsedSignOut = signOutInLocalStorage;
+  }
+  return [parsedAccount, parsedSignOut];
+  
+};
 
 
 export const ShoppingCardProvider = function ({ children }){
+  //My Account 
+  const [account, setAccount] = useState({});
+
+    //Sign out 
+  const [signOut, setSignOut] = useState(false);
     // Shopping card - Counter
   const [count, setCount] = useState(0);
 
@@ -53,7 +82,7 @@ export const ShoppingCardProvider = function ({ children }){
   };
 
   const filterBy = (_searchType, _items, _searchByTitle, _searchByCategory) => {
-    console.log(_searchType, _items, _searchByTitle, _searchByCategory);
+
     if(_searchType == 'BY_TITLE'){
       return filteredItemsByTitle(_items, _searchByTitle);
     }
@@ -101,7 +130,11 @@ export const ShoppingCardProvider = function ({ children }){
       setSearchByTitle,
       filteredItems,
       searchByCategory,
-      setSearchByCategory
+      setSearchByCategory, 
+      account,
+      setAccount, 
+      signOut, 
+      setSignOut
     }}>
       {children}
     </ShoppingCardContext.Provider>
