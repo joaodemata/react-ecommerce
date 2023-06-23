@@ -1,11 +1,11 @@
 import {  Link, Navigate } from 'react-router-dom';
 import { useContext, useState, useRef } from 'react';
-import { ShoppingCardContext } from '../../context';
+import { ShoppingCartContext } from '../../context';
 import Layout from '../../components/layout';
 import { extractAndParseLocalStorage } from '../../utils';
 
 function SignIn() {
-  const context = useContext(ShoppingCardContext);
+  const context = useContext(ShoppingCartContext);
   const [view, setView] = useState('user-info');
   const form = useRef(null);
 

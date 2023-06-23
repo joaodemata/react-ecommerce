@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { BackspaceIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
-import { ShoppingCardContext } from '../../context';
+import { ShoppingCartContext } from '../../context';
 import Layout from '../../components/layout';
 import Card from '../../components/card';
 import ProductDetail from '../../components/product_detail';
 
 function Home() {
-  const context = useContext(ShoppingCardContext);
+  const context = useContext(ShoppingCartContext);
 
   const renderView = () => {
     if (context.filteredItems?.length > 0) {

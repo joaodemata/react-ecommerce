@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 import { extractAndParseLocalStorage } from '../utils';
 
-export const ShoppingCardContext = createContext();
+export const ShoppingCartContext = createContext();
 
 export const initializeLocalStorage = () =>{
   const accountInLocalStorage = extractAndParseLocalStorage('account');
@@ -109,7 +109,7 @@ export const ShoppingCardProvider = function ({ children }){
   }, [items, searchByTitle, searchByCategory]);
     
   return (    
-    <ShoppingCardContext.Provider value={{
+    <ShoppingCartContext.Provider value={{
       count,
       setCount,
       isProductDetailOpen,
@@ -137,6 +137,6 @@ export const ShoppingCardProvider = function ({ children }){
       setSignOut
     }}>
       {children}
-    </ShoppingCardContext.Provider>
+    </ShoppingCartContext.Provider>
   );
 };

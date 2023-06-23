@@ -1,6 +1,8 @@
-import { useRoutes, BrowserRouter } from 'react-router-dom';
-import { ShoppingCardProvider } from '../../context';
+import { useContext } from 'react';
+import { useRoutes, BrowserRouter, Navigate } from 'react-router-dom';
+import { ShoppingCardProvider, initializeLocalStorage, ShoppingCartContext } from '../../context';
 import CheckoutSideMenu from '../../components/checkout_side_menu';
+import { extractAndParseLocalStorage } from '../../utils';
 
 import Home from '../home';
 import MyAccount from '../my_account';
@@ -12,8 +14,45 @@ import NavBar from '../../components/nav_bar';
 import './App.css';
  
 const AppRoutes = () =>{
-  const routes = useRoutes([
-    {
+  const context = useContext(ShoppingCartContext);
+
+  // Account 
+  const account = extractAndParseLocalStorage('account');
+  // Sign-out 
+  const signOut = extractAndParseLocalStorage('sign-out');
+  //Has an account 
+  const noAccountInLocalStorage = account ? Object.keys(account).length === 0 : true;
+  const noAccountInLocalState = Object.keys(context.account).length === 0; 
+  const hasUserAnAccount = !noAccountInLocalStorage || !noAccountInLocalState;
+  const isUserSignOut = context.signOut || signOut;
+
+  let changeRoutes = [ {
+    path: '/',
+    element: <Navigate replace to={'/sign-in'}/>
+  }, 
+  {
+    path: '/clothes',
+    element: <Navigate replace to={'/sign-in'}/>
+  }, 
+  {
+    path: '/electronics',
+    element: <Navigate replace to={'/sign-in'}/>
+  }, 
+  {
+    path: '/furnitures',
+    element: <Navigate replace to={'/sign-in'}/>
+  }, 
+  {
+    path: '/toys',
+    element: <Navigate replace to={'/sign-in'}/>
+  }, 
+  {
+    path: '/others',
+    element: <Navigate replace to={'/sign-in'}/>
+  }, ];
+
+  if(hasUserAnAccount && !isUserSignOut){
+    changeRoutes = [ {
       path: '/',
       element: <Home/>
     }, 
@@ -36,7 +75,13 @@ const AppRoutes = () =>{
     {
       path: '/others',
       element: <Home/>
-    }, 
+    }, ];
+   
+  }
+
+
+  const routes = useRoutes([
+    ...changeRoutes,
     {
       path: '/my-account',
       element: <MyAccount/>
@@ -71,7 +116,8 @@ const AppRoutes = () =>{
 };
 
 const App = () => {
- 
+  initializeLocalStorage();
+
   return (
     <ShoppingCardProvider>
       <BrowserRouter>

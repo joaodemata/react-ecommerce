@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { XMarkIcon } from '@heroicons/react/24/solid';
-import { ShoppingCardContext } from '../../context';
+import { ShoppingCartContext } from '../../context';
 import OrderCard from '../order_card';
 import { totalPrice } from '../../utils';
 import './styles.css';
 
 const CheckoutSideMenu = () =>{
-  const context = useContext(ShoppingCardContext);
+  const context = useContext(ShoppingCartContext);
 
   const handleDelete = (_id) => {
     const filteredProducts = context.cartProducts.filter(_product => _product.id != _id);

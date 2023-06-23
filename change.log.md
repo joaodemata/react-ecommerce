@@ -1,5 +1,12 @@
 ### Change log del Ecommerce
 
+### 0.0.8 (joaodemata)
+
+## Added
+
+- Componente para la bolsa de compras
+- Vista de mi cuenta y poder editar los datos
+
 ### 0.0.7 (joaodemata)
 
 ## Added

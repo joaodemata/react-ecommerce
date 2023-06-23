@@ -2,10 +2,10 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../components/layout';
 import OrdersCard from '../../components/orders_card';
-import { ShoppingCardContext } from '../../context';
+import { ShoppingCartContext } from '../../context';
 
 function MyOrders() {
-  const context = useContext(ShoppingCardContext);
+  const context = useContext(ShoppingCartContext);
 
   return (
     <Layout> 
