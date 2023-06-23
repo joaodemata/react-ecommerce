@@ -1,25 +1,25 @@
 # Todo list con React.js
 
-This project consist a todo list where you can:
+This project consist a ecommerce where you can:
 
-- Add tasks
-- Complete tasks
-- Delete taks
-- search tasks
-
-Bonus: The app has special messages when you complete all your tasks or no tasks had been added
+- Add products to a cart
+- Filter products
+- Create your account
+- Edit your account
+- Get a detail product
+- Checkout an order
 
 Give it a try!! access to: https://radiant-cranachan-ee61eb.netlify.app/
 
 Spanish
 
-Este proyecto consiste en un listado de tareas donde puedes realizar las siguiente acciones:
+Este proyecto consiste en una tienda online donde puedes:
 
-- Agregar tareas
-- Completar tareas
-- Eliminar tareas
-- Buscar tareas
-
-Bonus: La aplicación te mostrará mensajes especiales cuando, completes todas tus tareas o no tengas ninguna tarea (ya sea porque no hay o porque la busqueda no consiguio ninguna tarea)
+- Agregar productos a un carrito
+- Filtrar los productos por categoria y nombre
+- Crearte una cuenta
+- Editar tu cuenta
+- Visualizar detalle de un producto
+- Realizar una compra de productos
 
 Echale un ojo!! accede a: https://radiant-cranachan-ee61eb.netlify.app/
